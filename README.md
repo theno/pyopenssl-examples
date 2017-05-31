@@ -24,23 +24,6 @@ Show task details, e.g.:
 fab -d tox
 ```
 
-Compile and run examples:
-
-```bash
-fab run
-```
-
-All executed command line commands will be printed out.  You can rerun this
-commands "manually", modify them, play with them.  Also it's a good start to
-look for function `run()` in `fabfile.py`. And try this for a better
-overview:
-
-```bash
-# so much output, cannot see the wood for the trees ...
-fab run --hide=output
-fab run --hide=stdout
-```
-
 
 ### Provisioning
 
@@ -52,14 +35,25 @@ fab tox
 
 ### Run pyopenssl-examples
 
-Now, run pyopenssl-examples:
+Now, compile and run the examples:
 ```bash
 # run all pyopenssl-examples
 fab run
 
-# run one example
+# run one example "manually"
 PYTHONPATH='.' \
 .tox/py36/bin/python  pyopenssl_examples/bio-connect.py  editorconfig.org
+```
+
+All executed command line commands will be printed out.  You can rerun this
+commands "manually", modify them, play with them.  Also it's a good start to
+look for function `run()` in `fabfile.py`. And try this for a better
+overview:
+
+```bash
+# so much output, cannot see the wood for the trees ...
+fab run --hide=output
+fab run --hide=stdout
 ```
 
 [1]: http://docs.fabfile.org
