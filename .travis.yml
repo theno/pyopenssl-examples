@@ -1,0 +1,5 @@
+language: python
+install:
+  - pip install fabric
+script:
+  - fab dev_check_urls:meta
